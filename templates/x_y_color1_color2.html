@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Checkerboard</title>
+    
+    <style>
+    #containter {
+    width: 1400px;
+    }
+
+    .box1 {
+        height: 75px;
+        width: 75px;
+        background-color: {{ color1 }};
+        display: inline-block;
+        
+    }
+
+    .box2 {
+        height: 75px;
+        width: 75px;
+        background-color: {{ color2 }};
+        display: inline-block;
+        
+    }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <table>
+            {% for i in range(num_x): %}
+            <tr>
+                {% for j in range(num_y): %}
+                <td class="box1"></td>
+                <td class="box2"></td>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for j in range(num_y): %}
+                <td class="box2"></td>
+                <td class="box1"></td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>
